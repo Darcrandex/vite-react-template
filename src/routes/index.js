@@ -11,4 +11,9 @@ export default [
     exact: true,
     component: lazy(() => import('@/pages/About')),
   },
+  {
+    path: '/support',
+    exact: true,
+    component: lazy(() => import('@/pages/Support')),
+  },
 ]

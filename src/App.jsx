@@ -28,7 +28,7 @@ const App = () => {
   )
 }
 
-// 请求 loading 提示(细粒度控制)
+// 请求 loading 提示(细粒度控制,不应该影响'App'组件)
 const RequestLoadingTips = observer(() => {
   const { request } = useStore()
   return <ScreenLoading loading={request.isFetching} />
