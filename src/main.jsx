@@ -7,7 +7,7 @@ import { StoreProvider } from '@/store'
 import App from './App'
 import './global.less'
 
-const confirmFn = (msg = '', cb = (ok = false) => {}) => {
+const confirmFn = (msg = '', cb = () => {}) => {
   Modal.confirm({
     title: '提示',
     content: msg,

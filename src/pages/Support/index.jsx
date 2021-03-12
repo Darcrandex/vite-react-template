@@ -645,7 +645,7 @@ const PropertyTable = ({ title = '', keys = [] }) => {
   )
 }
 
-export default function () {
+export default function Support() {
   return (
     <div>
       <PropertyTable title='Base' keys={apiBase} />
