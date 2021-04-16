@@ -63,12 +63,17 @@ axiosInstance.interceptors.response.use(
     }
   },
   (err) => {
-    if (err.config.useLoading) {
-      requestStatus.sub()
+    // 先获取 err 中保存的 config
+    // 注意: 通过 'cancel' 取消的请求无法通过这种方式获取 config
+    if (err && typeof err.toJSON === 'function') {
+      // toJSON 是 axios@0.21.1 以上的版本提供的 api
+      // 通过这种方式获取到配置项(config)
+      const { useLoading, useError } = err.toJSON().config || {}
+      useLoading && requestStatus.sub()
+      useError && console.error('网络异常', err)
     }
-    if (err.config.useError) {
-      console.error('网络异常', err)
-    }
+
+    return Promise.reject(err)
   }
 )
 
