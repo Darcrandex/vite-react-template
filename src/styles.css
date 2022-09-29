@@ -1,0 +1,5 @@
+/* 解决 tailwind 和 antd 的样式冲突 */
+@import url('./tailwindcss-base.css');
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
