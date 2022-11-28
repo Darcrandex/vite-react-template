@@ -4,12 +4,12 @@
  * @author darcrand
  */
 
+import { apiTopic } from '@/services/topic'
 import { useQuery } from '@tanstack/react-query'
-import { Avatar, BackTop, Breadcrumb } from 'antd'
-import { useParams, Link } from 'react-router-dom'
+import { Avatar, Breadcrumb, FloatButton } from 'antd'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
-import { apiTopic } from '@/services/topic'
+import { NavLink, useParams } from 'react-router-dom'
 
 dayjs.extend(relativeTime)
 
@@ -35,7 +35,7 @@ function TopicDetail() {
     <>
       <Breadcrumb className="m-8">
         <Breadcrumb.Item>
-          <Link to="/">Home</Link>
+          <NavLink to="/">Home</NavLink>
         </Breadcrumb.Item>
         <Breadcrumb.Item>Detail</Breadcrumb.Item>
       </Breadcrumb>
@@ -50,7 +50,7 @@ function TopicDetail() {
 
       <div className="w-[800px] mx-auto p-6 max-w-full" dangerouslySetInnerHTML={{ __html: data?.content || '' }}></div>
 
-      <BackTop />
+      <FloatButton.BackTop />
     </>
   )
 }

@@ -2,7 +2,6 @@ import path from 'path'
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import { createHtmlPlugin } from 'vite-plugin-html'
-import { createStyleImportPlugin, AntdResolve } from 'vite-plugin-style-import'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, './')
@@ -10,7 +9,6 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       react(),
-      createStyleImportPlugin({ libs: [AntdResolve()] }),
       createHtmlPlugin({
         minify: true,
         inject: { data: { BUILD_DATE: new Date().toLocaleString('chinese', { hour12: false }) } },

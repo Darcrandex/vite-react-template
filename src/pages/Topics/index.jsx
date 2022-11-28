@@ -4,12 +4,12 @@
  * @author darcrand
  */
 
+import { apiTopic } from '@/services/topic'
 import { useQuery } from '@tanstack/react-query'
-import { useNavigate } from 'react-router-dom'
-import { Avatar, BackTop } from 'antd'
+import { Avatar, FloatButton } from 'antd'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
-import { apiTopic } from '@/services/topic'
+import { useNavigate } from 'react-router-dom'
 
 dayjs.extend(relativeTime)
 
@@ -53,7 +53,7 @@ function Topics() {
         ))}
       </ul>
 
-      <BackTop />
+      <FloatButton.BackTop />
     </>
   )
 }
