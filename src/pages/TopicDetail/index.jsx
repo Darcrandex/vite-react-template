@@ -5,6 +5,7 @@
  */
 
 import { apiTopic } from '@/services/topic'
+import { LeftOutlined } from '@ant-design/icons'
 import { useQuery } from '@tanstack/react-query'
 import { Avatar, Breadcrumb, FloatButton } from 'antd'
 import dayjs from 'dayjs'
@@ -35,7 +36,10 @@ function TopicDetail() {
     <>
       <Breadcrumb className="m-8">
         <Breadcrumb.Item>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to={-1}>
+            <LeftOutlined />
+            <span className="ml-2">Back</span>
+          </NavLink>
         </Breadcrumb.Item>
         <Breadcrumb.Item>Detail</Breadcrumb.Item>
       </Breadcrumb>

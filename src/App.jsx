@@ -4,21 +4,17 @@
  * @author darcrand
  */
 
-import { Routes, Route, Navigate } from 'react-router-dom'
-import Home from './pages/Home'
-import TopicDetail from './pages/TopicDetail'
-import Topics from './pages/Topics'
+import { useEffect } from 'react'
+import { Outlet } from 'react-router-dom'
 
 function App() {
+  useEffect(() => {
+    console.log('something run on root app')
+  }, [])
+
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home />}>
-          <Route index element={<Navigate to="topics" />} />
-          <Route path="topics" element={<Topics />} />
-          <Route path="topics/:id" element={<TopicDetail />} />
-        </Route>
-      </Routes>
+      <Outlet />
     </>
   )
 }

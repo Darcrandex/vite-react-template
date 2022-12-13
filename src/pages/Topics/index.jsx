@@ -5,11 +5,11 @@
  */
 
 import { apiTopic } from '@/services/topic'
+import useUrlState from '@ahooksjs/use-url-state'
 import { useQuery } from '@tanstack/react-query'
 import { Avatar, FloatButton, Radio } from 'antd'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 dayjs.extend(relativeTime)
@@ -25,8 +25,8 @@ const tabOptions = [
 function Topics() {
   const navigate = useNavigate()
 
-  const [tab, setTab] = useState(tabOptions[0].value)
-  const { data, isFetching } = useQuery(['topics', tab], () => apiTopic.pages({ tab }), {
+  const [params, setParams] = useUrlState({ tab: tabOptions[0].value })
+  const { data, isFetching } = useQuery(['topics', params], () => apiTopic.pages(params), {
     placeholderData: [],
     select(res) {
       if (res && Array.isArray(res.data?.data)) {
@@ -50,8 +50,8 @@ function Topics() {
           buttonStyle="solid"
           size="large"
           options={tabOptions}
-          value={tab}
-          onChange={(e) => setTab(e.target.value)}
+          value={params.tab}
+          onChange={(e) => setParams({ tab: e.target.value })}
         />
 
         {isFetching && <p className="my-8 text-center text-xl">Loading...</p>}
