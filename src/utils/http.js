@@ -3,7 +3,7 @@ import QueryString from 'qs'
 
 export const http = axios.create({
   baseURL: import.meta.env.DEV ? import.meta.env.VITE_APP_API_PREFIX : import.meta.env.VITE_APP_API_URI,
-  paramsSerializer: (params) => QueryString.stringify(params, { arrayFormat: 'brackets' }),
+  paramsSerializer: { serialize: (params) => QueryString.stringify(params, { arrayFormat: 'brackets' }) },
 })
 
 http.interceptors.request.use((config) => {
