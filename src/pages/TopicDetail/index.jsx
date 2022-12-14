@@ -30,7 +30,7 @@ function TopicDetail() {
     },
   })
 
-  if (!data) return <p className="py-10 text-center text-lg text-gray-700">Loading...</p>
+  if (!data) return <p className="py-10 text-center text-lg text-gray-700">loading...</p>
 
   return (
     <>

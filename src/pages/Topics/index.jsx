@@ -54,7 +54,7 @@ function Topics() {
           onChange={(e) => setParams({ tab: e.target.value })}
         />
 
-        {isFetching && <p className="my-8 text-center text-xl">Loading...</p>}
+        {isFetching && <p className="my-8 text-center text-xl">loading...</p>}
 
         <ul className="divide-y">
           {data.map((v) => (
