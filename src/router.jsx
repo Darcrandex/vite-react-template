@@ -4,7 +4,7 @@ import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from '
 
 import App from './App'
 
-const suspenseWrapper = (Component) => {
+const withSuspense = (Component) => {
   const LazyComponent = () => {
     return (
       <React.Suspense
@@ -23,9 +23,9 @@ const suspenseWrapper = (Component) => {
   return LazyComponent
 }
 
-const Home = suspenseWrapper(React.lazy(() => import('./pages/Home')))
-const Topics = suspenseWrapper(React.lazy(() => import('./pages/Topics')))
-const TopicDetail = suspenseWrapper(React.lazy(() => import('./pages/TopicDetail')))
+const Home = withSuspense(React.lazy(() => import('./pages/Home')))
+const Topics = withSuspense(React.lazy(() => import('./pages/Topics')))
+const TopicDetail = withSuspense(React.lazy(() => import('./pages/TopicDetail')))
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
