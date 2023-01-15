@@ -11,11 +11,18 @@ module.exports = {
     'prettier',
   ],
   overrides: [],
+
+  parser: '@babel/eslint-parser',
   parserOptions: {
+    requireConfigFile: false,
     ecmaVersion: 'latest',
     sourceType: 'module',
+    babelOptions: {
+      presets: ['@babel/preset-react'],
+    },
   },
-  plugins: ['react', 'react-hooks'],
+
+  plugins: ['prettier'],
   rules: {
     'react/prop-types': 'off',
     'no-unused-vars': 'warn',
