@@ -9,9 +9,9 @@ const withSuspense = (Component) => {
     return (
       <React.Suspense
         fallback={
-          <section className="flex items-center justify-center h-24 text-center text-violet-500">
+          <section className='flex items-center justify-center h-24 text-center text-violet-500'>
             <LoadingOutlined />
-            <span className="ml-4">Loading...</span>
+            <span className='ml-4'>Loading...</span>
           </section>
         }
       >
@@ -29,11 +29,11 @@ const TopicDetail = withSuspense(React.lazy(() => import('./pages/TopicDetail'))
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />}>
+    <Route path='/' element={<App />}>
       <Route element={<Home />}>
-        <Route index element={<Navigate to="topics" />} />
-        <Route path="topics" element={<Topics />} />
-        <Route path="topics/:id" element={<TopicDetail />} />
+        <Route index element={<Navigate to='topics' />} />
+        <Route path='topics' element={<Topics />} />
+        <Route path='topics/:id' element={<TopicDetail />} />
       </Route>
     </Route>
   )

@@ -42,35 +42,35 @@ function Topics() {
 
   return (
     <>
-      <h1 className="py-10 font-extrabold text-center text-4xl text-violet-500">Topics of cnodejs</h1>
+      <h1 className='py-10 font-extrabold text-center text-4xl text-violet-500'>Topics of cnodejs</h1>
 
-      <main className="mx-auto px-4 w-[800px] max-w-full">
+      <main className='mx-auto px-4 w-[800px] max-w-full'>
         <Radio.Group
-          optionType="button"
-          buttonStyle="solid"
-          size="large"
+          optionType='button'
+          buttonStyle='solid'
+          size='large'
           options={tabOptions}
           value={params.tab}
           onChange={(e) => setParams({ tab: e.target.value })}
         />
 
-        {isFetching && <p className="my-8 text-center text-xl">loading...</p>}
+        {isFetching && <p className='my-8 text-center text-xl'>loading...</p>}
 
-        <ul className="divide-y">
+        <ul className='divide-y'>
           {data.map((v) => (
             <li
               key={v.id}
               onClick={() => navigate(`/topics/${v.id}`)}
-              className="my-4 p-4 cursor-pointer rounded-md transition-all hover:bg-violet-100"
+              className='my-4 p-4 cursor-pointer rounded-md transition-all hover:bg-violet-100'
             >
-              <p className="flex items-center">
-                <Avatar size="large" src={v.author.avatar_url} className="shadow-md"></Avatar>
-                <span className="ml-2 font-bold">{v.author.loginname}</span>
-                <i className="flex-1"></i>
-                <span className="text-gray-500">{v.dateStr}</span>
+              <p className='flex items-center'>
+                <Avatar size='large' src={v.author.avatar_url} className='shadow-md'></Avatar>
+                <span className='ml-2 font-bold'>{v.author.loginname}</span>
+                <i className='flex-1'></i>
+                <span className='text-gray-500'>{v.dateStr}</span>
               </p>
 
-              <h3 className="mt-2 text-lg">{v.title}</h3>
+              <h3 className='mt-2 text-lg'>{v.title}</h3>
             </li>
           ))}
         </ul>

@@ -30,29 +30,29 @@ function TopicDetail() {
     },
   })
 
-  if (!data) return <p className="py-10 text-center text-lg text-gray-700">loading...</p>
+  if (!data) return <p className='py-10 text-center text-lg text-gray-700'>loading...</p>
 
   return (
     <>
-      <Breadcrumb className="m-8">
+      <Breadcrumb className='m-8'>
         <Breadcrumb.Item>
           <NavLink to={-1}>
             <LeftOutlined />
-            <span className="ml-2">Back</span>
+            <span className='ml-2'>Back</span>
           </NavLink>
         </Breadcrumb.Item>
         <Breadcrumb.Item>Detail</Breadcrumb.Item>
       </Breadcrumb>
 
-      <h1 className="my-8 text-center text-xl text-violet-500 font-extrabold">{data.title}</h1>
-      <p className="flex items-center justify-center">
-        <Avatar src={data.author?.avatar_url} className="shadow-md"></Avatar>
-        <span className="ml-2 text-lg font-bold text-gray-700">{data.author?.loginname}</span>
-        <span className="mx-4">-</span>
-        <span className=" text-gray-500">{data.dateStr}</span>
+      <h1 className='my-8 text-center text-xl text-violet-500 font-extrabold'>{data.title}</h1>
+      <p className='flex items-center justify-center'>
+        <Avatar src={data.author?.avatar_url} className='shadow-md'></Avatar>
+        <span className='ml-2 text-lg font-bold text-gray-700'>{data.author?.loginname}</span>
+        <span className='mx-4'>-</span>
+        <span className=' text-gray-500'>{data.dateStr}</span>
       </p>
 
-      <div className="w-[800px] mx-auto p-6 max-w-full" dangerouslySetInnerHTML={{ __html: data?.content || '' }}></div>
+      <div className='w-[800px] mx-auto p-6 max-w-full' dangerouslySetInnerHTML={{ __html: data?.content || '' }}></div>
 
       <FloatButton.BackTop />
     </>
