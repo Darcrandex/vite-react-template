@@ -34,15 +34,17 @@ function TopicDetail() {
 
   return (
     <>
-      <Breadcrumb className='m-8'>
-        <Breadcrumb.Item>
-          <NavLink to={-1}>
-            <LeftOutlined />
-            <span className='ml-2'>Back</span>
-          </NavLink>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item>Detail</Breadcrumb.Item>
-      </Breadcrumb>
+      <header className='m-8'>
+        <Breadcrumb>
+          <Breadcrumb.Item>
+            <NavLink to={-1}>
+              <LeftOutlined />
+              <span className='ml-2'>Back</span>
+            </NavLink>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>Detail</Breadcrumb.Item>
+        </Breadcrumb>
+      </header>
 
       <h1 className='my-8 text-center text-xl text-violet-500 font-extrabold'>{data.title}</h1>
       <p className='flex items-center justify-center'>

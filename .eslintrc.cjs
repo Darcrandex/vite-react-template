@@ -12,6 +12,12 @@ module.exports = {
   ],
   overrides: [],
 
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+
   parser: '@babel/eslint-parser',
   parserOptions: {
     requireConfigFile: false,
