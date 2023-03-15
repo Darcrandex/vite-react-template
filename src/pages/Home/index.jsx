@@ -4,9 +4,10 @@
  * @author darcrand
  */
 
-import { Outlet } from 'react-router-dom'
-import { Avatar } from 'antd'
 import { useUser } from '@/stores/use-user'
+import { ThunderboltOutlined } from '@ant-design/icons'
+import { Avatar } from 'antd'
+import { Outlet } from 'react-router-dom'
 
 function Home() {
   const { userInfo, hadLogin, login } = useUser()
@@ -31,7 +32,8 @@ function Home() {
               className='px-4 py-2 rounded-md font-bold text-violet-500 border-2 border-violet-500 bg-white transition-all hover:bg-violet-500 hover:text-white hover:shadow-lg'
               onClick={login}
             >
-              Login Now
+              <ThunderboltOutlined />
+              <span className='ml-2'>Login Now</span>
             </button>
           )}
         </div>
