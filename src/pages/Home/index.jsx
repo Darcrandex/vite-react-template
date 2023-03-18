@@ -21,9 +21,9 @@ function Home() {
         <div>
           {hadLogin ? (
             <>
-              <span className='mr-4 text-lg font-bold text-violet-700'>welcome, {userInfo.nickname}</span>
-              <Avatar size='large' className='bg-violet-400'>
-                {userInfo.nickname}
+              <span className='mr-4 text-lg font-bold text-violet-700'>Welcome, {userInfo.nickname}</span>
+              <Avatar size='large' className='!bg-violet-400'>
+                {userInfo.nickname.slice(0, 1)}
               </Avatar>
             </>
           ) : (

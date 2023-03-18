@@ -3,7 +3,7 @@
 - tailwindcss
 - jsconfig.json
 - react-router
-- recoil
+- jotai
 - @tanstack/react-query
 - axios
 - less
