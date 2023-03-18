@@ -56,7 +56,7 @@ function Topics() {
 
         {isFetching && <p className='my-8 text-center text-xl'>loading...</p>}
 
-        <ul className='divide-y'>
+        <ul>
           {data.map((v) => (
             <li
               key={v.id}
